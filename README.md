@@ -21,7 +21,7 @@ thmq2md.py 'https://www.tryhackme.com/room/vulnversity' './README.md'
 ```
 ---
 
-# Sample output
+# Sample 
 ```bash
 thmq2md.py "https://www.tryhackme.com/room/linuxprivesc" "./readme.md" -raw
 ```
