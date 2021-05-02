@@ -14,7 +14,7 @@ this is a small script for extracting data from try hack me room ,and creating a
 
 ### Usage 
 ```bash
-thmq2md.py <url> <output file> [-raw]
+thmq2md.py <url> <output file> [-raw"No color "]
 
 Example
 thmq2md.py 'https://www.tryhackme.com/room/vulnversity' './README.md'
