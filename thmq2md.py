@@ -85,6 +85,7 @@ def main():
 		Q[:]=[" "," "]
 		H[:]=[" "," "]
 		N[:]=[" "," "]
+		style=""
 	source = getData(url)
 	tasks = getTotalQ(source)
 	room = extractData(data=source, id1="title", tag='h1')
