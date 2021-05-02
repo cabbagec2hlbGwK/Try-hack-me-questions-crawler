@@ -1,4 +1,4 @@
-#!/bin/python3
+#!env/bin/python3
 from selenium import webdriver
 from bs4 import BeautifulSoup
 import re, sys
@@ -11,7 +11,7 @@ A=[" <answers> "," </answers> "]
 Q=[" <questions> "," </questions> "]
 H=[" <header> "," </header> "]
 N=[" <note> "," </note> "]
-raw = False
+
 
 
 
@@ -57,12 +57,16 @@ def filtering(data, tag):
 	d = re.finditer(r"<p>(.*)</p>", data)
 	return d
 
-
+def cleanH(raw):
+  cleanr = re.compile('<.*?>')
+  cleantext = re.sub(cleanr, '', raw)
+  return cleantext
 
 def main():
 
 	url = ""
 	file = ""
+	raw = False
 	if len(sys.argv) == 1:
 		url = input("enter URL for the room :" )
 		file = input("enter output file name with path :")
@@ -83,7 +87,6 @@ def main():
 		N[:]=[" "," "]
 	source = getData(url)
 	tasks = getTotalQ(source)
-	#print(source)
 	room = extractData(data=source, id1="title", tag='h1')
 	f = open(file, 'w')
 	f.write(style)
@@ -96,7 +99,7 @@ def main():
 			f.write(f"##{T[0]}"+str(ti.get_text()).strip()+f"{T[1]}\n")
 		da = filtering(question, "p")
 		for i in da :
-			f.write(f" 1. **"+ i.group(1).strip()+f'**\n*{A[0]} answer here {A[1]}\n')
+			f.write(f" 1. **"+cleanH(i.group(1).strip())+f'**\n*{A[0]} answer here {A[1]}\n')
 		f.write("\n<br>\n")
 	f.close()
 	print("done")
