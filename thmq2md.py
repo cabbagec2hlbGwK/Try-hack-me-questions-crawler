@@ -95,11 +95,13 @@ def main():
 		questions = str(extractData(data=source, id1=task.group(0), tag='div'))
 		question = str(extractData(data=questions, tag='div', clas='room-task-question-details'))
 		title = extractData(data=questions, clas="card-link", tag='a')
+		num = 1
 		for ti in title :
 			f.write(f"##{T[0]}"+str(ti.get_text()).strip()+f"{T[1]}\n")
 		da = filtering(question, "p")
 		for i in da :
-			f.write(f" 1. **"+cleanH(i.group(1).strip())+f'**\n*{A[0]} answer here {A[1]}\n')
+			f.write(f"\t{num}. **"+cleanH(i.group(1).strip())+f'**\n\t\t*{A[0]} answer here {A[1]}\n')
+			num+=1
 		f.write("\n<br>\n")
 	f.close()
 	print("done")
