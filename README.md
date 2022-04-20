@@ -1,5 +1,5 @@
 # Try-hack-me-questions-crawler
-this is a small script for extracting data from try hack me room ,and creating a MD file
+this is a small script for extracting data from try hack me room ,and compile a MD file
 
 ### Requirements 
   * selenium
