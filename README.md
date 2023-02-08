@@ -1,3 +1,5 @@
+[![Pylint](https://github.com/cabbagec2hlbGwK/Try-hack-me-questions-crawler/actions/workflows/pylint.yml/badge.svg?branch=main)](https://github.com/cabbagec2hlbGwK/Try-hack-me-questions-crawler/actions/workflows/pylint.yml)
+---
 # Try-hack-me-questions-crawler
 this is a small script for extracting data from try hack me room ,and compile a MD file
 
