@@ -2,6 +2,8 @@
 from selenium import webdriver
 from bs4 import BeautifulSoup
 import re, sys
+from selenium.webdriver.firefox.service import Service
+from webdriver_manager.firefox import GeckoDriverManager
 
 
 
@@ -23,7 +25,7 @@ def getTotalQ(data):
 def getData(url):
 	fireFoxOptions = webdriver.FirefoxOptions()
 	fireFoxOptions.headless = True
-	brower = webdriver.Firefox(options=fireFoxOptions, executable_path = './geckodriver')
+	brower = webdriver.Firefox(options=fireFoxOptions, service=Service(executable_path=GeckoDriverManager().install()))
 	brower.get(url)
 	r = brower.page_source
 	brower.quit()
