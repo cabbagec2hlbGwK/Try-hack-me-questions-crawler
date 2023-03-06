@@ -6,6 +6,7 @@ this is a small script for extracting data from try hack me room ,and compile a 
 ### Requirements 
   * selenium
   * bs4
+  * Firefox
 ---
 
 ### setup 
