@@ -25,7 +25,7 @@ def getTotalQ(data):
 def getData(url):
 	fireFoxOptions = webdriver.FirefoxOptions()
 	fireFoxOptions.headless = True
-	brower = webdriver.Firefox(options=fireFoxOptions, executable_path = './geckodriver')
+	brower = webdriver.Firefox(options=fireFoxOptions, service=Service(ChromeDriverManager().install()))
 	brower.get(url)
 	r = brower.page_source
 	brower.quit()
