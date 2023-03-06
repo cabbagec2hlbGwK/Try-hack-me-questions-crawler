@@ -2,6 +2,8 @@
 from selenium import webdriver
 from bs4 import BeautifulSoup
 import re, sys
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.firefox import FirefoxDriverManager
 
 
 
