@@ -12,7 +12,8 @@ this is a small script for extracting data from try hack me room ,and compile a 
 ### setup 
  * change the file permission of "geckodriver" and "thmq2md.py"
   ```html
-   chmod +x thmq2md.py geckodriver
+   pip install -r requirements.txt
+   apt install firefox # If you do not have firefox
   ```
 
 ### Usage 
